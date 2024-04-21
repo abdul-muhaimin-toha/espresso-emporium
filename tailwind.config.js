@@ -6,7 +6,11 @@ export default {
       sans: ["Raleway", "sans-seri"],
       serif: ["Rancho", "cursive"],
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        "navbar-background": "url('/src/assets/navbar-bg.jpg')",
+      },
+    },
   },
   plugins: [require("daisyui")],
 
