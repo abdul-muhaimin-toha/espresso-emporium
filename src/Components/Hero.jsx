@@ -1,23 +1,21 @@
 const Hero = () => {
   return (
     <section>
-      <div
-        className="hero min-h-screen"
-        style={{
-          backgroundImage:
-            "url(https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg)",
-        }}
-      >
-        <div className="hero-overlay bg-opacity-60"></div>
-        <div className="hero-content text-center text-neutral-content">
-          <div className="max-w-md">
-            <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-            <p className="mb-5">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
+      <div className="bg-hero-background hero min-h-[calc(100vh-80px)]">
+        <div className="hero-overlay bg-opacity-20"></div>
+        <div className="hero-content text-center text-white ">
+          <div className="max-w-3xl">
+            <h1 className="mb-4 font-serif text-6xl">
+              Would you like a Cup of Delicious Coffee?
+            </h1>
+            <p className="mb-6 text-base">
+              It's coffee time - Sip & Savor - Relaxation in every sip! Get the
+              nostalgia back!! Your companion of every moment!!! Enjoy the
+              beautiful moments and make them memorable.
             </p>
-            <button className="btn btn-primary">Get Started</button>
+            <button className="text-dark rounded-sm bg-primary px-4 py-2 font-serif text-2xl">
+              Learn More
+            </button>
           </div>
         </div>
       </div>

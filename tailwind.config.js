@@ -9,6 +9,11 @@ export default {
     extend: {
       backgroundImage: {
         "navbar-background": "url('/src/assets/navbar-bg.jpg')",
+        "hero-background": "url('/src/assets/hero-bg.png')",
+      },
+      colors: {
+        primary: "#E3B577",
+        dark: "#242222",
       },
     },
   },
