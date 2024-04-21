@@ -5,7 +5,7 @@ import coffeIcon from "../assets/service-1.png";
 const PopularProducts = () => {
   return (
     <section>
-      <div className="mx-auto mb-10 max-w-screen-2xl px-4 md:mb-16">
+      <div className="mx-auto  max-w-screen-2xl px-4 ">
         <SectionHeader
           heading="Our Popular Products"
           subHeading="--- Sip & Savor ---"
@@ -16,7 +16,7 @@ const PopularProducts = () => {
             <img src={coffeIcon} alt="Icon of Coffee" className="w-8" />
           </button>
         </div>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mb-10 grid grid-cols-1 gap-6 md:mb-16 md:grid-cols-2 lg:grid-cols-3">
           <ProductCard />
           <ProductCard />
           <ProductCard />
