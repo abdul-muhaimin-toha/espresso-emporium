@@ -7,8 +7,8 @@ import OfferingCard from "./OfferingCard";
 const OurOfferings = () => {
   return (
     <section className="bg-primary-light">
-      <div className="mx-auto  max-w-screen-2xl px-4 md:px-24">
-        <div className="grid grid-cols-1 gap-10 py-14 md:grid-cols-4 ">
+      <div className="mx-auto max-w-screen-2xl px-4">
+        <div className="grid grid-cols-1 gap-10 py-14 md:grid-cols-2 md:gap-y-16 lg:grid-cols-4 ">
           <OfferingCard
             image={services1}
             heading="Awesome Aroma"
