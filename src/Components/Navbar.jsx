@@ -27,10 +27,10 @@ const Navbar = () => {
               Log In
             </Link>
             <Link
-              to="/sign-up"
+              to="/users-DB"
               className="rounded-sm bg-primary px-2 py-1 font-serif text-xl text-dark md:px-3 md:py-2"
             >
-              Sign Up
+              UsersDB
             </Link>
           </div>
         </nav>

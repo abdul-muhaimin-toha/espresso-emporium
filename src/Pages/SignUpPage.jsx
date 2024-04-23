@@ -1,12 +1,94 @@
 import { Link } from "react-router-dom";
 import { LuEye, LuEyeOff } from "react-icons/lu";
 import { useState } from "react";
+import useAuth from "../hooks/useAuth";
 
 const SignUpPage = () => {
   const [passIsVisible, setPassIsVisible] = useState(false);
-
+  const { createNewUser, googleLogIn, gitHubLogIn } = useAuth();
   const handlePassVisible = () => {
     setPassIsVisible(!passIsVisible);
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    createNewUser(email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user);
+        fetch("http://localhost:3000/users", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify({
+            email,
+            creationTime: user.metadata.creationTime,
+          }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+          });
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        console.error(errorMessage);
+      });
+  };
+
+  const handleGoogleLogIn = () => {
+    googleLogIn()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        fetch("http://localhost:3000/users", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify({
+            email: user.email,
+            creationTime: user.metadata.creationTime,
+          }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+          });
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        console.error(errorMessage);
+      });
+  };
+
+  const handleGitHubLogIn = () => {
+    gitHubLogIn()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        fetch("http://localhost:3000/users", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify({
+            email: user.email,
+            creationTime: user.metadata.creationTime,
+          }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+          });
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        console.error(errorMessage);
+      });
   };
 
   return (
@@ -19,22 +101,19 @@ const SignUpPage = () => {
                 Sign Up Now!
               </h3>
               <p></p>
-              <form className="flex flex-col">
-                <input
-                  type="text"
-                  placeholder="Enter your name"
-                  className="mb-8 border p-4"
-                />
+              <form onSubmit={handleFormSubmit} className="flex flex-col">
                 <input
                   type="email"
                   placeholder="Enter your email"
                   className="mb-8 border p-4"
+                  name="email"
                 />
                 <div className="relative">
                   <input
                     type={passIsVisible ? "text" : "password"}
                     placeholder="Enter your password"
                     className=" w-full border p-4"
+                    name="password"
                   />
                   <div
                     onClick={handlePassVisible}
@@ -50,10 +129,16 @@ const SignUpPage = () => {
                 />
               </form>
               <div className="mt-8 flex flex-col gap-3 md:flex-row">
-                <button className="w-full rounded-md border-2 border-primary p-3 font-bold text-primary md:w-1/2">
+                <button
+                  onClick={handleGoogleLogIn}
+                  className="w-full rounded-md border-2 border-primary p-3 font-bold text-primary md:w-1/2"
+                >
                   Join With Google
                 </button>
-                <button className="w-full rounded-md border-2 border-primary p-3 font-bold text-primary md:w-1/2">
+                <button
+                  onClick={handleGitHubLogIn}
+                  className="w-full rounded-md border-2 border-primary p-3 font-bold text-primary md:w-1/2"
+                >
                   Join With Github
                 </button>
               </div>
