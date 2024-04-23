@@ -10,7 +10,7 @@ import cupImage8 from "../assets/cup-8.png";
 
 const Instagram = () => {
   return (
-    <section>
+    <section id="instagram-showcase">
       <div className="mx-auto max-w-screen-2xl px-4 ">
         <SectionHeader
           heading="Follow on Instagram"

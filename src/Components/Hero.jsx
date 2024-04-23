@@ -1,7 +1,7 @@
 const Hero = () => {
   return (
     <section>
-      <div className="bg-hero-background hero min-h-[calc(100vh-80px)]">
+      <div className="hero min-h-[calc(100vh-80px)] bg-hero-background">
         <div className="hero-overlay bg-opacity-20"></div>
         <div className="hero-content text-center text-white ">
           <div className="max-w-3xl">
@@ -13,9 +13,12 @@ const Hero = () => {
               nostalgia back!! Your companion of every moment!!! Enjoy the
               beautiful moments and make them memorable.
             </p>
-            <button className="text-dark rounded-sm bg-primary px-4 py-2 font-serif text-2xl">
+            <a
+              href="#instagram-showcase"
+              className="rounded-sm bg-primary px-4 py-2 font-serif text-2xl text-dark"
+            >
               Learn More
-            </button>
+            </a>
           </div>
         </div>
       </div>
