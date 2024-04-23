@@ -5,7 +5,7 @@ import UseSingleCoffee from "../hooks/UseSingleCoffee";
 
 const CoffeeDetailsPage = () => {
   const { id } = useParams();
-  const { data, isLoading, refetch } = UseSingleCoffee(id);
+  const { data } = UseSingleCoffee(id);
 
   return (
     <section>

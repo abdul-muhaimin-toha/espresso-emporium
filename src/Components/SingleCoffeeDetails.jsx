@@ -39,8 +39,3 @@ const SingleCoffeeDetails = ({ coffee }) => {
 };
 
 export default SingleCoffeeDetails;
-
-export const loadSingleCoffee = async ({ params }) => {
-  const res = await fetch(`http://localhost:3000/coffees/${params.id}`);
-  return res.json();
-};

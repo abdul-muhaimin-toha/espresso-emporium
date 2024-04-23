@@ -1,8 +1,8 @@
 import Swal from "sweetalert2";
 
-const UpdateCoffee = ({ coffee }) => {
+const UpdateCoffee = ({ coffee, refetch }) => {
   const { _id, name, quantity, supplier, taste, category, details, photoURL } =
-    coffee;
+    coffee || {};
 
   const handleUplateCoffee = (e) => {
     e.preventDefault();
@@ -35,12 +35,13 @@ const UpdateCoffee = ({ coffee }) => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data.acknowledged) {
+        if (data.modifiedCount > 0) {
           Swal.fire({
             title: "Good job!",
             text: "You coffee updated successfully!",
             icon: "success",
           });
+          refetch();
         }
       });
   };

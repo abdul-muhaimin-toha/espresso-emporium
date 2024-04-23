@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import useALLCoffees from "../hooks/useALLCoffees";
 
 const PopularProducts = () => {
-  const { data, isLoading, refetch } = useALLCoffees();
+  const { data, refetch } = useALLCoffees();
   return (
     <section>
       <div className="mx-auto  max-w-screen-2xl px-4 ">
