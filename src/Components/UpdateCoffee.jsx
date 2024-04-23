@@ -127,7 +127,7 @@ const UpdateCoffee = ({ coffee, refetch }) => {
           <input
             type="submit"
             value="Update Coffee Details"
-            className="w-full border border-dark bg-primary p-3 font-serif text-xl"
+            className="w-full cursor-pointer border border-dark bg-primary p-3 font-serif text-xl"
           />
         </div>
       </form>

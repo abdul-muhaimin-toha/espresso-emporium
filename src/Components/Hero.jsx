@@ -5,7 +5,7 @@ const Hero = () => {
         <div className="hero-overlay bg-opacity-20"></div>
         <div className="hero-content text-center text-white ">
           <div className="max-w-3xl">
-            <h1 className="mb-4 font-serif text-6xl">
+            <h1 className="mb-4 font-serif text-6xl text-primary">
               Would you like a Cup of Delicious Coffee?
             </h1>
             <p className="mb-6 text-base">
