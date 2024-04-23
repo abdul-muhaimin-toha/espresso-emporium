@@ -8,6 +8,8 @@ import HomePage from "./Pages/HomePage";
 import AddCoffeePage from "./Pages/AddCoffeePage";
 import CoffeeDetailsPage from "./Pages/CoffeeDetailsPage";
 import EditCoffeePage from "./Pages/EditCoffeePage";
+import LogInPage from "./Pages/LogInPage";
+import SignUpPage from "./Pages/SignUpPage";
 import ErrorPage from "./Pages/ErrorPage";
 
 const router = createBrowserRouter(
@@ -17,6 +19,8 @@ const router = createBrowserRouter(
       <Route path="coffee-add-new" element={<AddCoffeePage />} />
       <Route path="coffee-details/:id" element={<CoffeeDetailsPage />} />
       <Route path="coffee-edit/:id" element={<EditCoffeePage />} />
+      <Route path="log-in" element={<LogInPage />} />
+      <Route path="sign-up" element={<SignUpPage />} />
       <Route path="*" element={<ErrorPage />} />
     </Route>,
   ),

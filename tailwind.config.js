@@ -10,6 +10,8 @@ export default {
       backgroundImage: {
         "navbar-background": "url('/src/assets/navbar-bg.jpg')",
         "hero-background": "url('/src/assets/hero-bg.png')",
+        "sign-up-background": "url('/src/assets/sign-up-bg.jpg')",
+        "log-in-background": "url('/src/assets/log-in-bg.jpg')",
       },
       colors: {
         primary: "#E3B577",
