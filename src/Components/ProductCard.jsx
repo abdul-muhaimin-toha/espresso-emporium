@@ -3,7 +3,7 @@ import productImage from "../assets/product-image-fallback.png";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 
-const ProductCard = ({ coffee }) => {
+const ProductCard = ({ coffee, refetch }) => {
   const { _id, name, supplier, category, photoURL } = coffee;
 
   const handleDeleteCoffee = () => {
@@ -24,11 +24,14 @@ const ProductCard = ({ coffee }) => {
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
-            Swal.fire({
-              title: "Deleted!",
-              text: "Your file has been deleted.",
-              icon: "success",
-            });
+            if (data.deletedCount > 0) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success",
+              });
+              refetch();
+            }
           });
       }
     });

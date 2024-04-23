@@ -2,8 +2,10 @@ import ProductCard from "./ProductCard";
 import SectionHeader from "./SectionHeader";
 import coffeIcon from "../assets/service-1.png";
 import { Link } from "react-router-dom";
+import useCoffees from "../hooks/useCoffees";
 
-const PopularProducts = ({ coffees }) => {
+const PopularProducts = () => {
+  const { data, isLoading, refetch } = useCoffees();
   return (
     <section>
       <div className="mx-auto  max-w-screen-2xl px-4 ">
@@ -21,8 +23,8 @@ const PopularProducts = ({ coffees }) => {
           </Link>
         </div>
         <div className="mb-10 grid grid-cols-1 gap-6 md:mb-16 md:grid-cols-2 lg:grid-cols-3">
-          {coffees.map((coffee) => (
-            <ProductCard key={coffee._id} coffee={coffee} />
+          {data?.map((coffee) => (
+            <ProductCard key={coffee._id} coffee={coffee} refetch={refetch} />
           ))}
         </div>
       </div>
@@ -31,8 +33,3 @@ const PopularProducts = ({ coffees }) => {
 };
 
 export default PopularProducts;
-
-export const loadAllCoffee = async () => {
-  const res = await fetch("http://localhost:3000/coffees");
-  return res.json();
-};
