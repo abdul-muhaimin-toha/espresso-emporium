@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 
-const useCoffees = () => {
+const useALLCoffees = () => {
   const { data, isLoading, refetch } = useQuery({
     queryKey: ["coffees"],
     queryFn: async () => {
@@ -13,4 +13,4 @@ const useCoffees = () => {
   return { data, isLoading, refetch };
 };
 
-export default useCoffees;
+export default useALLCoffees;

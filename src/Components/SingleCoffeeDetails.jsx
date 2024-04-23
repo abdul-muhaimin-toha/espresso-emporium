@@ -2,7 +2,7 @@ import productImage from "../assets/product-image-fallback.png";
 
 const SingleCoffeeDetails = ({ coffee }) => {
   const { name, quantity, supplier, taste, category, details, photoURL } =
-    coffee;
+    coffee || {};
 
   return (
     <div className="mb-10 flex flex-col items-center bg-primary-light px-8 py-10 md:flex-row">

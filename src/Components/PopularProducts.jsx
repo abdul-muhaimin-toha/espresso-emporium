@@ -2,10 +2,10 @@ import ProductCard from "./ProductCard";
 import SectionHeader from "./SectionHeader";
 import coffeIcon from "../assets/service-1.png";
 import { Link } from "react-router-dom";
-import useCoffees from "../hooks/useCoffees";
+import useALLCoffees from "../hooks/useALLCoffees";
 
 const PopularProducts = () => {
-  const { data, isLoading, refetch } = useCoffees();
+  const { data, isLoading, refetch } = useALLCoffees();
   return (
     <section>
       <div className="mx-auto  max-w-screen-2xl px-4 ">

@@ -1,15 +1,17 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import GoBackHome from "../Components/GoBackHome";
 import SingleCoffeeDetails from "../Components/SingleCoffeeDetails";
+import UseSingleCoffee from "../hooks/UseSingleCoffee";
 
 const CoffeeDetailsPage = () => {
-  const coffee = useLoaderData();
+  const { id } = useParams();
+  const { data, isLoading, refetch } = UseSingleCoffee(id);
 
   return (
     <section>
       <div className="mx-auto max-w-screen-2xl px-4">
         <GoBackHome />
-        <SingleCoffeeDetails coffee={coffee} />
+        <SingleCoffeeDetails coffee={data} />
       </div>
     </section>
   );
