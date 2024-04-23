@@ -1,8 +1,39 @@
 import { AiOutlineEye, AiTwotoneDelete, AiTwotoneEdit } from "react-icons/ai";
 import productImage from "../assets/product-image-fallback.png";
+import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({ coffee }) => {
-  const { name, supplier, category, photoURL } = coffee;
+  const { _id, name, supplier, category, photoURL } = coffee;
+
+  const handleDeleteCoffee = () => {
+    const id = _id;
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:3000/coffees/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            Swal.fire({
+              title: "Deleted!",
+              text: "Your file has been deleted.",
+              icon: "success",
+            });
+          });
+      }
+    });
+  };
+
   return (
     <div className="flex flex-col items-center bg-[#eceae38f] p-10 shadow-md">
       <div className="flex items-center justify-center">
@@ -14,13 +45,22 @@ const ProductCard = ({ coffee }) => {
         <p className="text-2xl font-bold">{category}</p>
       </div>
       <div className="mt-8 flex gap-3 text-xl text-dark">
-        <button className="rounded-sm border border-dark bg-primary p-2">
+        <Link
+          to={`/coffee-details/${_id}`}
+          className="rounded-sm border border-dark bg-primary p-2"
+        >
           <AiOutlineEye />
-        </button>
-        <button className="rounded-sm border border-primary bg-dark p-2 text-white">
+        </Link>
+        <Link
+          to={`/coffee-edit/${_id}`}
+          className="rounded-sm border border-primary bg-dark p-2 text-white"
+        >
           <AiTwotoneEdit />
-        </button>
-        <button className="rounded-sm border border-dark bg-primary p-2">
+        </Link>
+        <button
+          onClick={handleDeleteCoffee}
+          className="rounded-sm border border-dark bg-primary p-2"
+        >
           <AiTwotoneDelete />
         </button>
       </div>

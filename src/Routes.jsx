@@ -10,14 +10,23 @@ import CoffeeDetailsPage from "./Pages/CoffeeDetailsPage";
 import EditCoffeePage from "./Pages/EditCoffeePage";
 import ErrorPage from "./Pages/ErrorPage";
 import { loadAllCoffee } from "./Components/PopularProducts";
+import { loadSingleCoffee } from "./Components/SingleCoffeeDetails";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
       <Route index element={<HomePage />} loader={loadAllCoffee} />
       <Route path="coffee-add-new" element={<AddCoffeePage />} />
-      <Route path="coffee-details" element={<CoffeeDetailsPage />} />
-      <Route path="coffee-edit" element={<EditCoffeePage />} />
+      <Route
+        path="coffee-details/:id"
+        element={<CoffeeDetailsPage />}
+        loader={loadSingleCoffee}
+      />
+      <Route
+        path="coffee-edit/:id"
+        element={<EditCoffeePage />}
+        loader={loadSingleCoffee}
+      />
       <Route path="*" element={<ErrorPage />} />
     </Route>,
   ),

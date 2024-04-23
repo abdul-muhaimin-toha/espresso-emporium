@@ -1,12 +1,15 @@
+import { useLoaderData } from "react-router-dom";
 import GoBackHome from "../Components/GoBackHome";
 import SingleCoffeeDetails from "../Components/SingleCoffeeDetails";
 
 const CoffeeDetailsPage = () => {
+  const coffee = useLoaderData();
+
   return (
     <section>
       <div className="mx-auto max-w-screen-2xl px-4">
         <GoBackHome />
-        <SingleCoffeeDetails />
+        <SingleCoffeeDetails coffee={coffee} />
       </div>
     </section>
   );
