@@ -4,7 +4,9 @@ const useAllUsers = () => {
   const { data, isLoading, refetch } = useQuery({
     queryKey: ["coffees"],
     queryFn: async () => {
-      const response = await fetch("http://localhost:3000/users");
+      const response = await fetch(
+        "https://espresso-emporium-server-ozq97bwzn.vercel.app/users",
+      );
       const data = await response.json();
       return data;
     },

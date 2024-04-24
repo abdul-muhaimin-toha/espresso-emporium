@@ -28,4 +28,42 @@ const router = createBrowserRouter(
   ),
 );
 
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <RootLayout />,
+//     errorElement: <ErrorPage />,
+//     children: [
+//       {
+//         path: "/",
+//         element: <HomePage />,
+//       },
+//       {
+//         path: "coffee-add-new",
+//         element: <AddCoffeePage />,
+//       },
+//       {
+//         path: "coffee-details/:id",
+//         element: <CoffeeDetailsPage />,
+//       },
+//       {
+//         path: "coffee-edit/:id",
+//         element: <EditCoffeePage />,
+//       },
+//       {
+//         path: "users-DB",
+//         element: <UsersDashBoardPage />,
+//       },
+//       {
+//         path: "log-in",
+//         element: <LogInPage />,
+//       },
+//       {
+//         path: "sign-up",
+//         element: <SignUpPage />,
+//       },
+//     ],
+//   },
+// ]);
+
 export default router;
