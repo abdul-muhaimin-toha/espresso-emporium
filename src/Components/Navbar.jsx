@@ -24,7 +24,7 @@ const Navbar = () => {
               to="/log-in"
               className="rounded-sm bg-primary px-2 py-1 font-serif text-xl text-dark md:px-3 md:py-2"
             >
-              Log In
+              Join Now
             </Link>
             <Link
               to="/users-DB"
