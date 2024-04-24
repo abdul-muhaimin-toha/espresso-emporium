@@ -19,7 +19,7 @@ const LogInPage = () => {
       .then((userCredential) => {
         const user = userCredential.user;
         console.log(user);
-        fetch(`https://espresso-emporium-server-ozq97bwzn.vercel.app/users`, {
+        fetch(`https://espresso-emporium-server-green-xi.vercel.app/users`, {
           method: "PATCH",
           headers: {
             "content-type": "application/json",
@@ -46,7 +46,7 @@ const LogInPage = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
-        fetch("https://espresso-emporium-server-ozq97bwzn.vercel.app/users", {
+        fetch("https://espresso-emporium-server-green-xi.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -72,7 +72,7 @@ const LogInPage = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
-        fetch("https://espresso-emporium-server-ozq97bwzn.vercel.app/users", {
+        fetch("https://espresso-emporium-server-green-xi.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",

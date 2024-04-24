@@ -5,7 +5,7 @@ const useALLCoffees = () => {
     queryKey: ["users"],
     queryFn: async () => {
       const response = await fetch(
-        "https://espresso-emporium-server-ozq97bwzn.vercel.app/coffees",
+        "https://espresso-emporium-server-green-xi.vercel.app/coffees",
       );
       const data = await response.json();
       return data;

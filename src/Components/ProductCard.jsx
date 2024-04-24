@@ -19,7 +19,7 @@ const ProductCard = ({ coffee, refetch }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         fetch(
-          `https://espresso-emporium-server-ozq97bwzn.vercel.app/coffees/${id}`,
+          `https://espresso-emporium-server-green-xi.vercel.app/coffees/${id}`,
           {
             method: "DELETE",
           },

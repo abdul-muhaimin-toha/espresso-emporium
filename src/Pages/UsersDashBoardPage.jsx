@@ -16,7 +16,7 @@ const UsersDashBoardPage = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         fetch(
-          `https://espresso-emporium-server-ozq97bwzn.vercel.app/users/${id}`,
+          `https://espresso-emporium-server-green-xi.vercel.app/users/${id}`,
           {
             method: "DELETE",
           },

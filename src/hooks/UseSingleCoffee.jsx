@@ -5,7 +5,7 @@ const UseSingleCoffee = (id) => {
     queryKey: ["singleCoffee", id],
     queryFn: async () => {
       const response = await fetch(
-        `https://espresso-emporium-server-ozq97bwzn.vercel.app/coffees/${id}`,
+        `https://espresso-emporium-server-green-xi.vercel.app/coffees/${id}`,
       );
       const data = await response.json();
       return data;

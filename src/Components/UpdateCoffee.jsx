@@ -26,7 +26,7 @@ const UpdateCoffee = ({ coffee, refetch }) => {
     };
 
     fetch(
-      `https://espresso-emporium-server-ozq97bwzn.vercel.app/coffees/${_id}`,
+      `https://espresso-emporium-server-green-xi.vercel.app/coffees/${_id}`,
       {
         method: "PUT",
         headers: {
